@@ -1,0 +1,10 @@
+--extra-index-url https://download.pytorch.org/whl/cu116
+torch
+torchvision
+torchaudio
+Flask
+scikit-learn
+pandas
+numpy
+matplotlib
+gunicorn
