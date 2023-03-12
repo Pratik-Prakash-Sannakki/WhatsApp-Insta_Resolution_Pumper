@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Upload Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// Make an AJAX request to get a list of uploaded image filenames
+			$.get('/get_images', function(data) {
+				// Parse the list of filenames from the server response
+				var filenames = JSON.parse(data);
+				
+				// For each filename, create a new img element and add it to the page
+				for (var i = 0; i < filenames.length; i++) {
+					var filename = filenames[i];
+                    console.log(filename);
+					var img = $('<img>').attr('src', '/uploads/' + filename);
+					$('body').append(img);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Image Upload Example</h1>
+	<form action="/upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="file">
+		<input type="submit" value="Upload">
+	</form>
+</body>
+</html>
