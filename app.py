@@ -95,7 +95,9 @@ def get_images():
     return json.dumps(filenames)
 
 
-# list of all uploaded image
+
+
+# list of all uploaded images
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
