@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<h1>Resolution Pumper ESR-GAN</h1>
+	<h1 id="text-setter"></h1>
 	<title>Image Upload Example</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			// Function to get a list of uploaded image filenames and display them
+
 			function displayImages() {
 				// Make an AJAX request to get a list of uploaded image filenames
 				$.get('/get_images', function(data) {
@@ -15,7 +18,23 @@
 					// For each filename, create a new img element and add it to the page
 					for (var i = 0; i < filenames.length; i++) {
 						var filename = filenames[i];
+						var img = $('<img>').attr('src', '/results/' + filename);
+						$('body').append(img);
+					}
+				});
+			}
+			function displayUploadedImages() {
+				// Make an AJAX request to get a list of uploaded image filenames
+				$.get('/get_Uploaded_images', function(data) {
+					// Parse the list of filenames from the server response
+					var filenames = JSON.parse(data);
+					
+					// For each filename, create a new img element and add it to the page
+					for (var i = 0; i < filenames.length; i++) {
+						var filename = filenames[i];
 						var img = $('<img>').attr('src', '/uploads/' + filename);
+
+						img.title = 'Uploaded Image';
 						$('body').append(img);
 					}
 				});
@@ -23,23 +42,59 @@
 			
 			// Add a click event listener to the "Show Images" button
 			$('#show-images-btn').click(function() {
+				
 				displayImages();
+				displayUploadedImages()
+				
+				
 			});
 		});
 	</script>
-    <style>
-        img {
-          width: 200px;
-          height: 200px;
-        }
-      </style>
+	<style>
+		h1 {
+		  text-align: center;
+		}
+		
+		img {
+			margin-right:10px;
+			margin-left: 10px;
+		  
+		}
+		body {
+        background-color: #6c8ebf;
+        color: black;
+      }
+		
+		
+	  </style>
+
 </head>
 <body>
-	<h1>Image Upload Example</h1>
+	
 	<form action="/upload" method="post" enctype="multipart/form-data">
 		<input type="file" name="file">
-		<input type="submit" value="Upload">
+		<input id= "upload" type="submit"  value="Upload & Predict ">
+		<script>
+			document.getElementById("upload").addEventListener("click", function() {
+			document.getElementById("text-setter").innerHTML = "Hey Your Image is getting Upscaled !!! Good Things take Time !!!";
+	});
+			
+		</script>
+
 	</form>
+	
+	<br>
 	<button id="show-images-btn">Show Images</button>
+	<script>
+		
+window.onload = function() {
+  // Check if the user arrived at this page via the back button
+  if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+    // Update the text of the h1 element
+    document.getElementById("text-setter").textContent = "Yaay!!! click on Show Image and Enjoy";
+  }
+};
+	</script>
+	<br>
 </body>
 </html>
