@@ -9,7 +9,7 @@ from flask import Flask, request, render_template, send_file, send_from_director
 import os
 
 model_path = 'RRDB_ESRGAN_x4.pth'  # models/RRDB_ESRGAN_x4.pth OR models/RRDB_PSNR_x4.pth
-device = torch.device('cuda')  # if you want to run on CPU, change 'cuda' -> cpu
+device = torch.device('cpu')  # if you want to run on CPU, change 'cuda' -> cpu
 # device = torch.device('cpu')
 
 test_img_folder = 'uploads/*'
