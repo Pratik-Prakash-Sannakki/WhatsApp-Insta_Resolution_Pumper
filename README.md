@@ -13,20 +13,14 @@ To solve the degradation of resolution of images on social media and messaging p
 
 The Dataset used is the Housing dataset which contains information about different houses in Boston. This data was originally a part of UCI Machine Learning Repository and has been removed now. We can also access this data from the scikit-learn library and kaggle. There are 506 samples and 13 feature variables in this dataset. The objective is to predict the value of prices of the house using the given features.
 
-<br>
-
-## Check out The Application
-
-Demo - https://lr-houseprice.onrender.com
-
-*Note* - If the link doesn't give a quick response on click, copy and past it in a new tab and wait. It's a bit laggy on intial call but will work fine once the page loads up once. 
 
 <br>
 
 
 ## Web Interface
 
-<img width="1440" alt="Screenshot 2023-02-24 at 3 37 47 PM" src="https://user-images.githubusercontent.com/114252357/221287962-a5097e72-4ae3-4899-b5e7-cf71388c88cd.png">
+![pump](https://user-images.githubusercontent.com/114252357/225192633-f62abffc-89e2-44ed-80e2-d813b40c25b9.png)
+
 
 
 <br>
