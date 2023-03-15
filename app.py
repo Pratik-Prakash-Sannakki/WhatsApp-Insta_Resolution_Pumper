@@ -18,12 +18,13 @@ model = arch.RRDBNet(3, 3, 64, 23, gc=32)
 model.load_state_dict(torch.load(model_path), strict=True)
 model.eval()
 model = model.to(device)
-app.config['TIMEOUT'] = 600
+
 
 print('Model path {:s}. \nTesting...'.format(model_path))
 
 
 app = Flask(__name__)
+app.config['TIMEOUT'] = 600
 
 # Specify the directory where uploaded images will be stored
 UPLOAD_FOLDER = 'uploads/'
