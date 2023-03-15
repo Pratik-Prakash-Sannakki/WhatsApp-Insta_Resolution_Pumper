@@ -40,7 +40,7 @@ Demo - https://lr-houseprice.onrender.com
 #### 1) Clone the repostory 
 
 ```
-git clone https://github.com/Pratik-Prakash-Sannakki/Plug-n-Predict_MLOps.git
+https://github.com/Pratik-Prakash-Sannakki/WhatsApp-Insta_Resolution_Pumper.git
 
 ```
 #### 2) Create a conda Environment 
