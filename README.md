@@ -1,8 +1,6 @@
 # Resolution_Pumper
-Pumps up the Image resolution by x4 factor  
-
-
-
+  
+  
 ## Problem Statement 
 
 To solve the degradation of resolution of images on social media and messaging platforms like whatsapp and instagram by pumping up its resolution
@@ -95,6 +93,10 @@ gunicorn --timeout 300 {flask file name}:app
 #### 8) Go to the URL provided on deployment 
 
 #### 9) Now you can access the application remotely
+
+## Medium Article
+
+https://medium.com/@pratikpsannakki1/pixel-perfect-esrgan-powered-high-resolution-image-upscaling-platform-2c3ae0934d53
 
 
 
