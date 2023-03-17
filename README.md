@@ -101,6 +101,7 @@ gunicorn --timeout 300 {flask file name}:app
 #### 9) Now you can access the application remotely
 
 
+<br>
 
 ## Featured 
 
