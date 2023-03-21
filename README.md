@@ -1,6 +1,7 @@
 # Resolution_Pumper
   
   
+  
 ## Problem Statement 
 
 To solve the degradation of resolution of images on social media and messaging platforms like whatsapp and instagram by pumping up its resolution
